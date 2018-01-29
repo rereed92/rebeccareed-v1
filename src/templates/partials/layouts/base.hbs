@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+    <head>
+        <title>
+            {{#if title}}
+                {{title}}
+            {{else}}
+                Base Page Title
+            {{/if}}
+        </title>
+
+        <link rel="stylesheet" href="/css/main.css">
+
+        {{#> head-block}}{{/head-block}}
+  </head>
+
+  <body>
+        {{#> _navigation-block}} {{/_navigation-block}}
+
+        {{!-- {{#> content-block}} {{/content-block}} --}}
+
+        {{#> _footer-block}} {{/_footer-block}}
+
+        {{!-- {{#> scripts-block}}{{/scripts-block}} --}}
+  </body>
+</html>

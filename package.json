@@ -1,0 +1,26 @@
+{
+  "name": "rebeccareed-v1",
+  "version": "1.0.0",
+  "description": "Portfolio Website V1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rebecca Reed",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.23.6",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.1.0",
+    "gulp-compile-handlebars": "^0.6.1",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-modernizr": "^2.0.0",
+    "gulp-pretty-url": "^0.1.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "handlebars-helpers": "^0.10.0",
+    "run-sequence": "^2.2.1"
+  },
+  "dependencies": {}
+}
