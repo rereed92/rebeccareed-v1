@@ -2,15 +2,93 @@
     background-color: $color-black;
     padding: 20px 0;
 
+    &__wrapper {
+        display: flex;
+        align-items: stretch;
+    }
+
     &__items {
         margin: 0;
         padding: 0;
         list-style: none;
         text-align: center;
+        align-self: center;
+        width: calc(100% - (#{$logo-width} * 2));
     }
 
     &__item {
         display: inline-block;
         margin: 0 10px;
+    }
+
+    &__icon {
+        opacity: 1;
+        transition: opacity .2s ease-in-out;
+    }
+
+    &__link {
+        color: $color-silver;
+        transition: color .2s ease-in-out;
+        padding: 10px;
+        font-size: 1.3em;
+        display: inline-block;
+        position: relative;
+
+        &--active,
+        &:hover {
+            color: $color-hopbush;
+            transition: color .2s ease-in-out;
+        }
+
+        &::after {
+            content: '';
+            opacity: 0;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 0.5em;
+            transition: opacity .2s ease-in-out;
+        }
+
+        &--home::after {
+            content: 'HOME';
+        }
+
+        &--about::after {
+            content: 'ABOUT';
+        }
+
+        &--skills::after {
+            content: 'SKILLS';
+        }
+
+        &--work::after {
+            content: 'WORK';
+        }
+
+        &--contact::after {
+            content: 'CONTACT';
+        }
+
+        &:hover::after {
+            opacity: 1;
+            transition: opacity .2s ease-in-out;
+        }
+    }
+
+    &__link:hover &__icon {
+        opacity: 0;
+        transition: opacity .2s ease-in-out;
+    }
+
+    
+}
+
+@media only screen and (max-width: $breakpoint-mobile) {
+    .nav {
+        &__item {
+            margin: 0 5px;
+        }
     }
 }

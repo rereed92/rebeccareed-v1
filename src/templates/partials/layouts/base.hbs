@@ -17,10 +17,17 @@
   <body>
         {{#> _navigation-block}} {{/_navigation-block}}
 
-        {{!-- {{#> content-block}} {{/content-block}} --}}
+        <main class="content">
+            <div class="spring">
+                {{#> _content-block}} {{/_content-block}}
+            </div>
+        </main>
 
-        {{#> _footer-block}} {{/_footer-block}}
+        {{#> _footer-block}} 
+            {{> includes/_footer }}
+        {{/_footer-block}}
 
-        {{!-- {{#> scripts-block}}{{/scripts-block}} --}}
+        <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet">
   </body>
 </html>

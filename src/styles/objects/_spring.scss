@@ -1,34 +1,19 @@
-.spring
-{
+.spring {
     margin: 0 auto;
     max-width: $spring-max-width;
     min-width: $spring-min-width;
-    padding: 0 20px;
+    padding: 0 30px;
     height: 100%;
+}
 
-    &--md
-    {
-        max-width: $spring-max-width-md;
-    }
-
-    &--sm
-    {
-        max-width: $spring-max-width-sm;
+@media only screen and (max-width: $breakpoint-tablet) {
+    .spring {
+        padding: 0 50px;
     }
 }
 
-@media only screen and (max-width: $breakpoint-tablet)
-{
-    .spring
-    {
-        padding: 0 10px;
-    }
-}
-
-@media only screen and (max-width: $breakpoint-mobile)
-{
-    .spring
-    {
-        padding: 0 10px;
+@media only screen and (max-width: $breakpoint-mobile) {
+    .spring {
+        padding: 0 20px;
     }
 }

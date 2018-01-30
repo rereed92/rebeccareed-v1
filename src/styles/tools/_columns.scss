@@ -1,0 +1,33 @@
+@mixin column-classes($breakpoint: false, $column-count: $column-count-default, $column-delimiter: $column-delimiter-default) {
+    @if $breakpoint {
+        @media only screen and (max-width: $breakpoint)
+        {
+            $device: "";
+
+            @if $breakpoint == $breakpoint-tablet {
+                $device: "md";
+            } 
+            
+            @if $breakpoint == $breakpoint-mobile {
+                $device: "sm";
+            }
+
+            @include column-width($column-count, $column-delimiter, "#{$device}-");
+        }
+    } @else {
+        @include column-width($column-count, $column-delimiter);
+    }
+}
+
+@mixin column-width($column-count, $column-delimiter, $device: "") {
+    @for $x from 1 through $column-count
+    {
+        @for $y from 1 through $x
+        {
+            &--#{$device}#{$y}#{$column-delimiter}#{$x}
+            {
+                width: percentage($y / $x);
+            }
+        }
+    }
+}

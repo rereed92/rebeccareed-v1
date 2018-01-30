@@ -1,21 +1,35 @@
 // Settings
 @import 'settings/breakpoints';
-@import 'settings/colours';
+@import 'settings/colors';
+@import 'settings/columns';
+@import 'settings/fonts';
+@import 'settings/logo';
 @import 'settings/spring';
 
 // Tools
+@import 'tools/clearfix';
+@import 'tools/columns';
 
 // Generic
 @import 'generic/normalize';
+@import 'generic/fontawesome';
 
 // Base
 @import 'base/all';
+@import 'base/anchor';
 @import 'base/body';
+@import 'base/paragraph';
 
 // Objects
+@import 'objects/content';
+@import 'objects/grid';
 @import 'objects/spring';
 
 // Components
+@import 'components/footer';
+@import 'components/heading';
+@import 'components/logo';
 @import 'components/nav';
 
 // Trumps
+@import 'trumps/visually-hidden';

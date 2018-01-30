@@ -1,11 +1,35 @@
 <nav class="nav">
     <div class="spring">
-        <ul class="nav__items">
-            <li class="nav__item"><a class="nav__link {{#eq active 'home'}} nav__link--active {{/eq}}" href="/">Home</a></li>
-            <li class="nav__item"><a class="nav__link {{#eq active 'about'}} nav__link--active {{/eq}}" href="/about">About</a></li>
-            <li class="nav__item"><a class="nav__link {{#eq active 'skills'}} nav__link--active {{/eq}}" href="/skills">Skills</a></li>
-            <li class="nav__item"><a class="nav__link {{#eq active 'portfolio'}} nav__link--active {{/eq}}" href="/portfolio">Portfolio</a></li>
-            <li class="nav__item"><a class="nav__link {{#eq active 'contact'}} nav__link--active {{/eq}}" href="/contact">Contact</a></li>
-        </ul>
+        <div class="nav__wrapper">
+            <a href="/" class="logo"></a>
+
+            <ul class="nav__items">
+                <li class="nav__item">
+                    <a class="nav__link nav__link--home {{#eq active 'home'}} nav__link--active {{/eq}}" href="/">
+                        <i class="fas fa-home nav__icon"></i>
+                    </a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link nav__link--about {{#eq active 'about'}} nav__link--active {{/eq}}" href="/about">
+                        <i class="fas fa-user nav__icon"></i>
+                    </a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link nav__link--skills {{#eq active 'skills'}} nav__link--active {{/eq}}" href="/skills">
+                        <i class="fas fa-cogs nav__icon"></i>
+                    </a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link nav__link--work {{#eq active 'work'}} nav__link--active {{/eq}}" href="/work">
+                        <i class="fas fa-laptop nav__icon"></i>
+                    </a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link nav__link--contact {{#eq active 'contact'}} nav__link--active {{/eq}}" href="/contact">
+                        <i class="fas fa-envelope nav__icon"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
 </nav>
