@@ -79,6 +79,7 @@ gulp.task('scripts', () => {
             includeGlobals: false,
             transform: ['babelify'],
         }))
+        .pipe(minify())
         .pipe(uglify())
         .pipe(gulp.dest('dist/scripts'));
 });
