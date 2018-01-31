@@ -2,6 +2,7 @@ body {
     background-color: $color-mine-shaft;
     font-size: 1em;
     min-height: 100vh;
+    min-width: 320px;
 }
 
 @media only screen and (max-width: $breakpoint-tablet) {
