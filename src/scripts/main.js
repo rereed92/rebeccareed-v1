@@ -1,3 +1,5 @@
 console.log('hello');
 
-// var helpers = require('handlebars-helpers')();
+const snap = require('snapsvg');
+
+console.log(snap);

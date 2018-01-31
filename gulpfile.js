@@ -10,8 +10,11 @@ const cssnano = require('gulp-cssnano');
 const autoprefixer = require('gulp-autoprefixer');
 
 const modernizr = require('gulp-modernizr');
+const babelify   = require('babelify');
+const browserify = require('gulp-browserify')
 const uglify = require('gulp-uglify');
 const minify = require('gulp-uglify');
+
 
 const del = require('del');
 const runSequence = require('run-sequence');
@@ -70,6 +73,16 @@ gulp.task('html', () => {
         }))
 });
 
+gulp.task('scripts', () => {
+    return gulp.src('src/scripts/main.js')
+        .pipe(browserify({
+            includeGlobals: false,
+            transform: ['babelify'],
+        }))
+        .pipe(uglify())
+        .pipe(gulp.dest('dist/scripts'));
+});
+
 gulp.task('modernizr', () => {
     return gulp.src(paths.src.scripts)
         .pipe(modernizr())
@@ -95,20 +108,21 @@ gulp.task('browserSync', () => {
 });
 
 gulp.task('default', (callback) => {
-    runSequence(['modernizr', 'sass', 'html', 'browserSync', 'watch'],
+    runSequence(['modernizr', 'sass', 'html', 'browserSync', 'watch', 'scripts'],
         callback
     )
 });
 
-gulp.task('watch', ['clean:dist', 'browserSync', 'modernizr', 'copy:fonts', 'sass', 'html'], () => {
+gulp.task('watch', ['clean:dist', 'browserSync', 'modernizr', 'copy:fonts', 'sass', 'html', 'scripts'], () => {
     gulp.watch(paths.src.sass, ['sass']);
     gulp.watch(paths.src.pages, ['html']); 
     gulp.watch(paths.src.partials, ['html']); 
+    gulp.watch(paths.src.scripts, ['scripts']);
 });
 
 gulp.task('build', (callback) => {
     runSequence('clean:dist', 
-        ['modernizr', 'copy:fonts', 'sass', 'html'],
+        ['modernizr', 'copy:fonts', 'sass', 'html', 'scripts'],
         callback
     )
 });

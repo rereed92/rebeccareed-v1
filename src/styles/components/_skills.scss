@@ -1,0 +1,123 @@
+.skills {
+    margin-bottom: 20px;
+
+    &__list {
+        padding: 0;
+        list-style: none;
+        margin: 0;
+    }
+
+    &__item {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        color: $color-white;
+        font-size: 2em;
+        display: inline-block;
+        position: relative;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        transition: all, .2s ease-in-out;
+
+        &--html:hover {
+            color: $color-cinnabar;
+        }
+
+        &--css:hover {
+            color: $color-royal-blue;
+        }
+
+        &--sass:hover {
+            color: $color-hopbush;
+        }
+
+        &--js:hover {
+            color: $color-ripe-lemon;
+        }
+
+        &--angular:hover {
+            color: $color-well-read;
+        }
+
+        &--react:hover {
+            color: $color-cyan;
+        }
+
+        &--wordpress:hover {
+            color: $color-cerulean;
+        }
+
+        &--laravel:hover {
+            color: $color-carnation;
+        }
+
+        &--node:hover {
+            color: $color-mantis;
+        }
+
+        &--gulp:hover {
+            color: $color-mandy;
+        }
+
+        &--grunt:hover {
+            color: $color-sun;
+        }
+
+        &--github:hover {
+            color: $color-mantis;
+        }
+
+        &--bitbucket:hover {
+            color: $color-blumine;
+        }
+
+        &--gitlab:hover {
+            color: $color-orange;
+        }
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 2px solid $color-white;
+            border-radius: 50%;
+            background: transparent;
+        }
+
+        &::after {
+            border: 0 solid transparent;
+        }
+
+        &:hover {
+            background: rgba($color-black, .6);
+            transition: all, .2s ease-in-out;
+
+            &::before {
+                border-color: $color-hopbush;
+                transition: border-top-color .15s linear, 
+                            border-right-color .15s linear .1s, 
+                            border-bottom-color .15s linear .2s;
+            }
+
+            &::after {
+                border-top: 2px solid $color-hopbush;
+                border-left-width: 2px;
+                border-right-width: 2px;
+                transform: rotate(270deg);
+                transition: border-left-width 0s linear .35s,
+                            transform .4s linear;
+            }
+        }
+    }
+
+    &__icon {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
