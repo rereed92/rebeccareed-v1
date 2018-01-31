@@ -4,4 +4,21 @@
         {{> includes/_navigation active='home' }}
     {{/inline}}
 
+    {{#*inline '_content-block'}} 
+        <div class="hero">
+            <div class="grid">
+                <div class="grid__item grid__item--1/2 grid__item--middle">
+                    {{#> _hero-block}} 
+                        {{> includes/_hero }}
+                    {{/_hero-block}}
+                </div>
+                <div class="grid__item grid__item--1/2 grid__item--middle">
+                    <h1 class="heading hero__heading">Rebecca Reed</h1>
+                    <p class="heading hero__subheading">Front End Developer</p>
+                </div>
+            </div>
+            
+        </div>
+    {{/inline}}
+
 {{/layouts/base}}

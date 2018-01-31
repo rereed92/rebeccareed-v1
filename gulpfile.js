@@ -25,6 +25,7 @@ const paths = {
     src: {
         sass: 'src/styles/**/*.scss',
         fonts: 'src/fonts/**',
+        images: 'src/images/**',
         pages: 'src/templates/pages/**/*.hbs',
         partial: 'src/templates/partials',
         partials: 'src/templates/partials/**/*.hbs',
@@ -33,6 +34,7 @@ const paths = {
     dist: {
         css: 'dist/css',
         fonts: 'dist/fonts',
+        images: 'dist/images',
         scripts: 'dist/scripts'
     }
 };
@@ -91,9 +93,14 @@ gulp.task('modernizr', () => {
         .pipe(gulp.dest(paths.dist.scripts))
 });
 
-gulp.task('copy:fonts', function() {
+gulp.task('copy-fonts', function() {
     return gulp.src(paths.src.fonts)
         .pipe(gulp.dest(paths.dist.fonts));
+ });
+
+ gulp.task('copy-images', function() {
+    return gulp.src(paths.src.images)
+        .pipe(gulp.dest(paths.dist.images));
  });
 
 gulp.task('clean:dist', () => {
@@ -114,7 +121,7 @@ gulp.task('default', (callback) => {
     )
 });
 
-gulp.task('watch', ['clean:dist', 'browserSync', 'modernizr', 'copy:fonts', 'sass', 'html', 'scripts'], () => {
+gulp.task('watch', ['clean:dist', 'browserSync', 'modernizr', 'copy-fonts', 'copy-images', 'sass', 'html', 'scripts'], () => {
     gulp.watch(paths.src.sass, ['sass']);
     gulp.watch(paths.src.pages, ['html']); 
     gulp.watch(paths.src.partials, ['html']); 
@@ -123,7 +130,7 @@ gulp.task('watch', ['clean:dist', 'browserSync', 'modernizr', 'copy:fonts', 'sas
 
 gulp.task('build', (callback) => {
     runSequence('clean:dist', 
-        ['modernizr', 'copy:fonts', 'sass', 'html', 'scripts'],
+        ['modernizr', 'copy-fonts', 'copy-images', 'sass', 'html', 'scripts'],
         callback
     )
 });

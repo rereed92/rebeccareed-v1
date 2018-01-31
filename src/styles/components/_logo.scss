@@ -1,6 +1,10 @@
 .logo {
     width: $logo-width;
     height: 60px;
-    background: $color-hopbush;
     display: inline-flex;
+
+    &__svg {
+        max-width: 100%;
+        max-height: 60px;
+    }
 }
