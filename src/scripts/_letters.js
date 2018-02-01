@@ -64,8 +64,6 @@ export default class Letters {
         
         const letters = document.querySelectorAll(this.selectors.letter);
 
-        console.log(this.settings.homePage);
-
         letters[letter1].classList.add(this.settings.homePage ? this.classes.rubberHero : this.classes.rubber);
         letters[letter2].classList.add(this.settings.homePage ? this.classes.rubberHero : this.classes.rubber);
         letters[letter3].classList.add(this.settings.homePage ? this.classes.rubberHero : this.classes.rubber);
