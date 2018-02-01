@@ -126,6 +126,8 @@ gulp.task('watch', ['clean:dist', 'browserSync', 'modernizr', 'copy-fonts', 'cop
     gulp.watch(paths.src.pages, ['html']); 
     gulp.watch(paths.src.partials, ['html']); 
     gulp.watch(paths.src.scripts, ['scripts']);
+    gulp.watch(paths.src.images, ['copy-images']);
+    gulp.watch(paths.src.fonts, ['copy-fonts']);
 });
 
 gulp.task('build', (callback) => {
