@@ -1,6 +1,10 @@
 console.log('hello');
 
-import Hero from './_hero';
+import Letters from './_letters';
+import Loader from './_loader';
 
-const hero = new Hero();
-hero.init();
+const letters = new Letters();
+letters.init();
+
+const loader = new Loader();
+loader.init();

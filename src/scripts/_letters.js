@@ -1,16 +1,14 @@
 let defaults = {
     $element: undefined,
     selectors: {
-        letter: '.hero__wobble',
-        subheading: '.hero__subheading'
+        letter: '.letters__wobble',
     },
     classes: {
-        visible: 'hero__wobble--visible',
-        display: 'hero__subheading--display'
+        visible: 'letters__wobble--visible',
     }
 };
 
-export default class Hero {
+export default class Letters {
     constructor() {
         this.$element = defaults.$element;
         this.selectors = defaults.selectors;
@@ -18,13 +16,13 @@ export default class Hero {
     }
 
     init() {
-        setTimeout(() => {
+        if (window.location.pathname === '/') {
+            setTimeout(() => {
+                this.showLetters();
+            }, 2200);
+        } else {
             this.showLetters();
-        }, 1200);
-
-        // setTimeout(() => {
-        //     this.showSubheading();
-        // }, 2200);
+        }
     }
     
     showLetters() {
@@ -33,9 +31,5 @@ export default class Hero {
                 letter.classList.add(this.classes.visible);
             }, index * 100);
         });
-    }
-
-    showSubheading() {
-        document.querySelector(this.selectors.subheading).classList.add(this.classes.display);
     }
 }
