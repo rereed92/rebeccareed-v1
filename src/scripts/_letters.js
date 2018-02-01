@@ -5,6 +5,11 @@ let defaults = {
     },
     classes: {
         visible: 'letters__wobble--visible',
+        rubberHero: 'letters__wobble--hero--rubber',
+        rubber: 'letters__wobble--rubber'
+    },
+    settings: {
+        homePage: false
     }
 };
 
@@ -13,14 +18,17 @@ export default class Letters {
         this.$element = defaults.$element;
         this.selectors = defaults.selectors;
         this.classes = defaults.classes;
+        this.settings = defaults.settings;
     }
 
     init() {
         if (window.location.pathname === '/') {
+            this.settings.homePage = true;
             setTimeout(() => {
                 this.showLetters();
             }, 2200);
         } else {
+            this.settings.homePage = false;
             this.showLetters();
         }
     }
@@ -32,37 +40,34 @@ export default class Letters {
         //     }, index * 100);
         // });
 
-
         let promise = Promise.resolve();
 
         document.querySelectorAll(this.selectors.letter).forEach((letter, index) => {
             promise = promise.then(() => {
                 letter.classList.add(this.classes.visible);
                 return new Promise((resolve) => {
-                  setTimeout(resolve, index * 100);
+                  setTimeout(resolve, 100);
                 });
             });
         });
 
-        promise.then(function () {
-            console.log('Loop finished.');
+        promise.then(() => {
+            this.animateLetters();
         });
     }
+
+    animateLetters() {
+        const length = document.querySelectorAll(this.selectors.letter).length - 1;
+        const letter1 = Math.floor(Math.random() * length);
+        const letter2 = Math.floor(Math.random() * length);
+        const letter3 = Math.floor(Math.random() * length);
+        
+        const letters = document.querySelectorAll(this.selectors.letter);
+
+        console.log(this.settings.homePage);
+
+        letters[letter1].classList.add(this.settings.homePage ? this.classes.rubberHero : this.classes.rubber);
+        letters[letter2].classList.add(this.settings.homePage ? this.classes.rubberHero : this.classes.rubber);
+        letters[letter3].classList.add(this.settings.homePage ? this.classes.rubberHero : this.classes.rubber);
+    }
 }
-
-
-// var array = ['some', 'array', 'containing', 'words'];
-// var interval = 1000; // how much time should the delay between two iterations be (in milliseconds)?
-// var promise = Promise.resolve();
-// array.forEach(function (el) {
-//   promise = promise.then(function () {
-//     console.log(el);
-//     return new Promise(function (resolve) {
-//       setTimeout(resolve, interval);
-//     });
-//   });
-// });
-
-// promise.then(function () {
-//   console.log('Loop finished.');
-// });

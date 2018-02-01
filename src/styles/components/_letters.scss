@@ -21,18 +21,26 @@
             color: $color-hopbush;
         }
 
-        &--hero:nth-child(#{randomNum(2, 11)}n) {
-            animation-name: rubberBand;
+        &--rubber {
+            animation-name: rubberBandPink;
             animation-duration: 1s;
             animation-fill-mode: both;
-            animation-delay: 3s;
+            animation-delay: .5s;
+        }
+
+        &--hero--rubber {
+            animation-name: rubberBandWhite;
+            animation-duration: 1s;
+            animation-fill-mode: both;
+            animation-delay: .5s;
         }
     }
 }
 
-@keyframes rubberBand {
+@keyframes rubberBandWhite {
     0% {
         transform: scale3d(1, 1, 1);
+        color: $color-white;
     }
     30% {
         transform: scale3d(1.25, 0.75, 1);
@@ -42,6 +50,7 @@
     }
     50% {
         transform: scale3d(1.15, 0.85, 1);
+        color: $color-hopbush;
     }
     65% {
         transform: scale3d(.95, 1.05, 1);
@@ -51,5 +60,33 @@
     }
     100% {
         transform: scale3d(1, 1, 1);
+        color: $color-white;
+    }
+}
+
+@keyframes rubberBandPink {
+    0% {
+        transform: scale3d(1, 1, 1);
+        color: $color-hopbush;
+    }
+    30% {
+        transform: scale3d(1.25, 0.75, 1);
+    }
+    40% {
+        transform: scale3d(0.75, 1.25, 1);
+    }
+    50% {
+        transform: scale3d(1.15, 0.85, 1);
+        color: $color-white;
+    }
+    65% {
+        transform: scale3d(.95, 1.05, 1);
+    }
+    75% {
+        transform: scale3d(1.05, .95, 1);
+    }
+    100% {
+        transform: scale3d(1, 1, 1);
+        color: $color-hopbush;
     }
 } 
