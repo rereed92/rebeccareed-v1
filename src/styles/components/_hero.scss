@@ -15,7 +15,6 @@
         animation-timing-function: ease-in-out;
 
         &#white-r {
-            
             fill-opacity: 0;            
             animation-name: drawLine, fillIn;
             animation-duration: 2s, 1s;
@@ -35,7 +34,30 @@
     }
 
     &__subheading {
-        margin-top: 10px;
+        margin-top: 2px;
+        color: $color-silver;
+        // opacity: 1;
+        animation-name: fadeIn;
+        animation-duration: 1s;
+        animation-delay: 2.2s;
+        animation-fill-mode: backwards;
+        // transition: opacity 1s ease-in-out;
+
+        // &--display {
+        //     opacity: 1;
+        // }
+    }
+
+    &__wobble {
+        display: inline-block;
+        opacity: 0;
+        transform: rotateZ(-14deg);
+        transition: all .3s ease-in-out;
+
+        &--visible {
+            opacity: 1;
+            transform: rotateZ(0deg);
+        }
     }
 }
 
@@ -51,5 +73,14 @@
     }
     to { 
         fill-opacity: 1; 
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
     }
 }
