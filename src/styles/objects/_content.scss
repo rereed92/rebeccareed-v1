@@ -1,4 +1,20 @@
 .content {
     min-height: calc(100vh - 170px);
     padding: 50px 0;
+
+    &__block {
+        animation-name: fadeIn;
+        animation-duration: 1s;
+        animation-delay: .8s;
+        animation-fill-mode: backwards;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }

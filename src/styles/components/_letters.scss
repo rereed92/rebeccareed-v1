@@ -20,6 +20,13 @@
         &--hero:hover {
             color: $color-hopbush;
         }
+
+        &--hero:nth-child(#{randomNum(2, 11)}n) {
+            animation-name: rubberBand;
+            animation-duration: 1s;
+            animation-fill-mode: both;
+            animation-delay: 3s;
+        }
     }
 }
 
