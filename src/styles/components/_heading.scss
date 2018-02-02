@@ -14,4 +14,12 @@
     &--2 {
         font-size: 1.2em;
     }
+
+    &--pink {
+        color: $color-hopbush;
+    }
+
+    &--bold {
+        font-weight: 500;
+    }
 }

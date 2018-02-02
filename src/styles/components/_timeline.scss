@@ -1,9 +1,60 @@
 .timeline {
+
+    color: $color-white;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 17px;
+        width: 6px;
+        background: $color-hopbush;
+        z-index: -1;
+    }
+
     &__description {
-        &--university {
-            &::before {
-                content: 'f19c';
-            }
-        }
+        padding: 20px 0;
+    }
+
+    &__content {
+        padding-top: 6px;
+    }
+
+    &__circle,
+    &__content {
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    &__circle {
+        width: 40px;
+        height: 40px;
+        background: $color-hopbush;
+        border-radius: 50%;
+        font-size: 1.5em;
+        position: relative;
+        margin-right: 20px;
+    }
+
+    &__icon {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &__heading {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    &__sub-heading {
+        margin-top: 5px;
+        font-size: 1.1em;
     }
 }
