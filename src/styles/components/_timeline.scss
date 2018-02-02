@@ -1,0 +1,9 @@
+.timeline {
+    &__description {
+        &--university {
+            &::before {
+                content: 'f19c';
+            }
+        }
+    }
+}

@@ -1,0 +1,10 @@
+.icon {
+    fill: currentColor;
+    overflow: hidden;
+    max-width: 32px;
+    height: inherit;
+
+    &--hover {
+        fill: currentColor;
+    }
+}

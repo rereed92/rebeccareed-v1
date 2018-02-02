@@ -75,6 +75,14 @@
             color: $color-orange;
         }
 
+        &--bootstrap {
+            color: $color-white;
+
+            &:hover {
+                color: $color-victoria;
+            }
+        }
+
         &::before,
         &::after {
             content: '';
@@ -112,10 +120,6 @@
                             transform .4s linear;
             }
         }
-    }
-
-    &__item--bootstrap:hover &__bootstrap {
-        fill: purple;
     }
 
     &__icon {
