@@ -36,7 +36,9 @@
         font-size: 1.6em;
         transition: color .2s ease-in-out;
 
-        &:hover {
+        &:hover,
+        &:focus {
+            outline: none;
             color: $color-hopbush;
             transition: color .2s ease-in-out;
         }

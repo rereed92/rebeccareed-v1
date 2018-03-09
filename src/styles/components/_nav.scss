@@ -35,7 +35,9 @@
         position: relative;
 
         &--active,
-        &:hover {
+        &:hover,
+        &:focus {
+            outline: none;
             color: $color-hopbush;
             transition: color .2s ease-in-out;
         }
@@ -71,13 +73,15 @@
             content: 'CONTACT';
         }
 
-        &:hover::after {
+        &:hover::after,
+        &:focus::after {
             opacity: 1;
             transition: opacity .2s ease-in-out;
         }
     }
 
-    &__link:hover &__icon {
+    &__link:hover &__icon,
+    &__link:focus &__icon {
         opacity: 0;
         transition: opacity .2s ease-in-out;
     }
