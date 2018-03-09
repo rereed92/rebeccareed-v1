@@ -1,0 +1,18 @@
+.contact {
+    &__label {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    &__input {
+        width: 100%;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        border: 2px solid darken($color-mine-shaft, 6%);;
+        background: darken($color-mine-shaft, 5%);
+        height: 35px;
+        padding: 5px 10px;
+        color: $color-silver;
+        font-family: $quicksand;
+    }
+}

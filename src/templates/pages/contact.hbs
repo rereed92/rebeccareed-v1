@@ -5,11 +5,33 @@
     {{/inline}}
 
     {{#*inline '_content-block'}} 
-        <div class="grid">
+        <h1 class="heading heading--1 letters">
+            <span class="letters__wobble">C</span><span class="letters__wobble">o</span><span class="letters__wobble">n</span><span class="letters__wobble">t</span><span class="letters__wobble">a</span><span class="letters__wobble">c</span><span class="letters__wobble">t</span>
+        </h1>
+
+        <div class="content__block grid">
             <div class="grid__item grid__item--2/3 grid__item--sm-1/1">
-                <h1 class="heading heading--1 letters">
-                    <span class="letters__wobble">C</span><span class="letters__wobble">o</span><span class="letters__wobble">n</span><span class="letters__wobble">t</span><span class="letters__wobble">a</span><span class="letters__wobble">c</span><span class="letters__wobble">t</span>
-                </h1>
+                <form method="POST" action="#" class="contact grid grid--gutter">
+                    <label class="grid__item grid__item--gutter grid__item--1/2">
+                        <span class="contact__label heading heading--3">Name</span>
+                        <input type="text" class="contact__input" />
+                    </label>
+
+                    <label class="grid__item grid__item--gutter grid__item--1/2">
+                        <span class="contact__label heading heading--3">Email</span>
+                        <input type="text" class="contact__input" />
+                    </label>
+
+                    <label class="grid__item grid__item--gutter grid__item--1/1">
+                        <span class="contact__label heading heading--3">Subject</span>
+                        <input type="text" class="contact__input" />
+                    </label>
+
+                    <label class="grid__item grid__item--gutter grid__item--1/1">
+                        <span class="contact__label heading heading--3">Message</span>
+                        <input type="textarea" class="contact__input" />
+                    </label>
+                </form>
             </div>
             <div class="grid__item grid__item--1/3 grid__item--sm-1/1"></div>
         </div>

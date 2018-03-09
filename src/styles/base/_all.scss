@@ -1,4 +1,10 @@
 *
 {
     box-sizing: border-box;
+
+    &:focus {
+        outline-width: 2px;
+        outline-style: solid;
+        outline-color: $color-hopbush;
+    }
 }
