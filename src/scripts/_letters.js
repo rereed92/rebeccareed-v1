@@ -1,5 +1,4 @@
 let defaults = {
-    $element: undefined,
     selectors: {
         letter: '.letters__wobble',
     },
@@ -15,7 +14,6 @@ let defaults = {
 
 export default class Letters {
     constructor() {
-        this.$element = defaults.$element;
         this.selectors = defaults.selectors;
         this.classes = defaults.classes;
         this.settings = defaults.settings;
@@ -34,12 +32,6 @@ export default class Letters {
     }
     
     showLetters() {
-        // document.querySelectorAll(this.selectors.letter).forEach((letter, index) => {
-        //     setTimeout(() => {
-        //         letter.classList.add(this.classes.visible);
-        //     }, index * 100);
-        // });
-
         let promise = Promise.resolve();
 
         document.querySelectorAll(this.selectors.letter).forEach((letter, index) => {
