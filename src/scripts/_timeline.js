@@ -24,7 +24,11 @@ export default class Timeline {
 
         this.hideItems(descriptions);
         
-        window.addEventListener('load', () => this.isVisible(descriptions));
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                this.isVisible(descriptions);
+            }, 800)
+        });
         window.addEventListener('scroll', () => this.isVisible(descriptions));
     }
 
