@@ -59,8 +59,8 @@
             <span class="letters__wobble">C</span><span class="letters__wobble">o</span><span class="letters__wobble">n</span><span class="letters__wobble">t</span><span class="letters__wobble">a</span><span class="letters__wobble">c</span><span class="letters__wobble">t</span>
         </h1>
 
-        <div class="content__block grid">
-            <div class="grid__item grid__item--2/3 grid__item--sm-1/1">
+        <div class="content__block grid grid--gutter grid--stretch">
+            <div class="grid__item grid__item--gutter grid__item--2/3 grid__item--sm-1/1">
                 <form method="POST" action="#" class="contact grid grid--gutter">
                     <div class="grid__item grid__item--gutter grid__item--1/2">
                         <label class="contact__label">
@@ -99,7 +99,7 @@
                     </div>
                 </form>
             </div>
-            <div class="grid__item grid__item--1/3 grid__item--sm-1/1">
+            <div class="grid__item grid__item--gutter grid__item--1/3 grid__item--sm-1/1">
                 <div class="map"></div>
             </div>
         </div>
@@ -130,8 +130,7 @@
                     </div>
                 </div>
             </footer>
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkyXUGrJB2JovN_nBsAv0AdB62gU2LEVk&callback=initMap"
-  type="text/javascript"></script>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
         <script src="/scripts/main.js"></script>
         <script src="/scripts/modernizr.js"></script>
   </body>
