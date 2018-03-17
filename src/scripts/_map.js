@@ -13,6 +13,10 @@ export default class Map {
     }
 
     initMap() {
+        if (!document.querySelector(this.selectors.map)) {
+            return;
+        }
+
         const london = new google.maps.LatLng(51.5070, -0.1222);
 
         let styles = [
@@ -230,8 +234,8 @@ export default class Map {
 
         let icon = {
             url: '/images/map-marker.png',
-            scaledSize: new google.maps.Size(100, 100), // scaled size
-            origin: new google.maps.Point(0, 0), // origin
+            scaledSize: new google.maps.Size(100, 100),
+            origin: new google.maps.Point(0, 0),
             anchor: new google.maps.Point(50, 100)
           };
 
@@ -248,7 +252,5 @@ export default class Map {
             icon: icon,
             visible: true
         });
-
-        console.log(icon);
     }
 }
